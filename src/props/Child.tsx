@@ -1,7 +1,8 @@
+import { ReactNode } from "react";
 interface ChildProps {
     color: string;
     onClick: () => void;
-    childern?: React.ReactNode;
+    children: ReactNode;
 }
 
 // Simple approach to create a React component
@@ -13,11 +14,11 @@ export const Child = ({ color, onClick }: ChildProps) => {
 };
 
 // Create a component as React function component
-export const ChildAsFC: React.FC<ChildProps> = ({color, onClick, childern}) => {
+export const ChildAsFC: React.FC<ChildProps> = ({color, onClick, children}) => {
     return (
         <div>
             {color}
-            {childern}
+            {children}
             <button onClick={onClick}>Click me</button>
         </div>
     );
